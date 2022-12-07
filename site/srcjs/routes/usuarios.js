@@ -28,4 +28,8 @@ router.post("/salvar", function (req, res) {
     usuarioController.salvar(req, res);
 });
 
+router.put("/salvar_plan", function (req, res) {
+    usuarioController.salvar_plan(req, res);
+});
+
 module.exports = router;

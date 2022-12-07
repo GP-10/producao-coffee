@@ -132,6 +132,46 @@ function salvar(req, res) {
 }
 
 
+function salvar_plan(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var tipo = req.body.tipoServer;
+    var uf = req.body.ufServer;
+    var tamanho = req.body.tamanhoServer;
+    var cidade = req.body.cidadeServer;
+    var id = req.body.idServer;
+
+    // Faça as validações dos valores
+    if (tipo == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (uf == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (tamanho == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (cidade == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (id == undefined) {
+        res.status(400).send("null");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.salvar_plan(tipo, uf, tamanho, cidade, id)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 
 function plantar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
@@ -179,5 +219,6 @@ module.exports = {
     listar,
     testar,
     plantar,
-    salvar
+    salvar,
+    salvar_plan
 }

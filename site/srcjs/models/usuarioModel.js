@@ -56,6 +56,18 @@ function salvar(nome, email, senha,id) {
     return database.executar(instrucao);
 }
 
+function salvar_plan(tipo, uf, tamanho, cidade, id) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",tipo, uf, tamanho, cidade, id);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        UPDATE [dbo].PLANTACAO SET tipo = '${tipo}', uf = '${uf}', cidade = '${cidade}', tamanho_m2 = '${tamanho}' WHERE idPlantacao = ${id};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 function plantar(especie, estado, cidade, tamanho, fkCliente) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function plantar():", especie, estado, cidade, tamanho, fkCliente);
@@ -74,5 +86,6 @@ module.exports = {
     cadastrar,
     listar,
     plantar,
-    salvar
+    salvar,
+    salvar_plan
 };
