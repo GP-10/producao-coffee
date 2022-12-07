@@ -185,5 +185,69 @@
     // function sumirMensagem() {
     //     cardErro.style.display = "none"
     // }
+    
 
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function salvar_plan() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var idVar = sessionStorage.ID_PLANTACAO
+        var tipoVar = sel_tipo.value;
+        var ufVar = sel_uf.value;
+        var tamanhoVar = Number(tamanho.value);
+        var cidadeVar = cidade.value
+
+        if (tipoVar == "" || ufVar == "" || tamanhoVar == "" || cidadeVar == "")  {
+            alert('Por favor, preencha todos os campos para prosseguir!')
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            // setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/salvar_plan", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                tipoServer: tipoVar,
+                ufServer: ufVar,
+                tamanhoServer: tamanhoVar,
+                cidadeServer: cidadeVar,
+                idServer: idVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                alert ("Informmações atualizadas com sucesso!")
+
+                setTimeout(() => {
+                    window.location = "perfil.html";
+                }, "2000")
+                
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar a atualização!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+    
 </SCript>
