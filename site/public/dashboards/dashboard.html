@@ -202,19 +202,19 @@
     var shadow = document.getElementById('KPI')
 
   for (var i = 0; i < card.length; i++){
-    if(registro.temperatura < 3){
+    if(registro.temperatura < 3 || registro.umidade < 5){
       card[i].style.background = '#3ec8e1';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    }else if(registro.temperatura < 18){
+    }else if(registro.temperatura < 18 || registro.umidade < 10){
       card[i].style.background = '#d9e146';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    }else if(registro.temperatura > 22){
+    }else if(registro.temperatura > 22 || registro.umidade > 13){
       card[i].style.background = '#e18e46';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    } else if(registro.temperatura > 30){
+    } else if(registro.temperatura > 30 || registro.umidade > 18){
       card[i].style.background = '#E13E3E';
       card[i].style.color = 'black';
       p[i].style.color = 'black';

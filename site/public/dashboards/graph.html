@@ -327,7 +327,7 @@ for (i = 0; i < resposta.length; i++) {
       document.getElementById('GRAPH').classList.remove('quente')
       document.getElementById('GRAPH').classList.remove('meioquente')
       document.getElementById('GRAPH').classList.remove('mormal')
-    }else if(registro2.temperatura < 18){
+    }else if(registro2.temperatura < 18 || registro.umidade < 10){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
       document.getElementById('GRAPH').classList.remove('frio')
@@ -335,7 +335,7 @@ for (i = 0; i < resposta.length; i++) {
       document.getElementById('GRAPH').classList.remove('quente')
       document.getElementById('GRAPH').classList.remove('meioquente')
       document.getElementById('GRAPH').classList.remove('normal')
-    }else if(registro2.temperatura > 22){
+    }else if(registro2.temperatura > 22 || registro.umidade > 13){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
       document.getElementById('GRAPH').classList.remove('frio')
@@ -343,7 +343,7 @@ for (i = 0; i < resposta.length; i++) {
       document.getElementById('GRAPH').classList.remove('quente')
       document.getElementById('GRAPH').classList.add('meioquente')
       document.getElementById('GRAPH').classList.remove('normal')
-    } else if(registro2.temperatura >= 30){
+    } else if(registro2.temperatura >= 30 || registro.umidade > 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
       document.getElementById('GRAPH').classList.remove('frio')
