@@ -383,8 +383,8 @@ for (i = 0; i < resposta.length; i++) {
               console.log(dados);
               console.log(dados2);
 
-             document.getElementById(`umi`).innerHTML = `${novoRegistro[0].temperatura}%`
-             document.getElementById(`temp`).innerHTML = `${novoRegistro[0].umidade}ºC`
+             document.getElementById(`umi`).innerHTML = `${novoRegistro[0].umidade}%`
+             document.getElementById(`temp`).innerHTML = `${novoRegistro[0].temperatura}ºC`
 
 
               if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
