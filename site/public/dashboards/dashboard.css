@@ -7,8 +7,16 @@
 body{
     background-color: rgba(0, 0, 0, 0.356);
     margin: 0 auto;
-    padding: 15px;
     
+}
+.KPII{
+    width: auto;
+    height: 120vh;
+}
+
+
+.janela2{
+    height: 100%;
 }
 
 .janela {
@@ -74,6 +82,9 @@ body{
   text-align: center;
   padding: 2% 5%;
 }
+.dash a{
+    margin-left: 15%;
+}
 
 .btn-nav-white {
   text-align: center;
@@ -120,14 +131,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 22%;
+    margin-left: 19%;
+    width: 85%;
+    /* background-color: tomato; */
 }
 
 .cards div {
-    padding: 10px;
+    padding: 10px 10px;
     height: 40%;
     margin: 20px;
-    width: 150px;
+    width: 150%;
     transition: all 0.3s ease-out;
 }
 
@@ -136,6 +149,10 @@ body{
     cursor: pointer;
 }
    
+.cards h2{
+    text-align: center;
+}
+
 .card p {
     color: #a3a5ae;
     font-size: 16px;
@@ -187,10 +204,6 @@ body{
     
 }
 
-.card{
-    transition: .5s ease;
-}
-
 .cards1, .cards2, .cards3{
     margin: 2%;
     width: 40%;
@@ -201,6 +214,7 @@ body{
     text-align: center;
     height: 180px;
     justify-content: right;
+    background-color: #212124;
     font-size: 20px;
 }
 
@@ -209,7 +223,8 @@ body{
     font-size: 50px;
     font-weight: lighter;
     text-align: left;
-    margin-left: -10%;
+    margin-left: -20%;
+    margin-top: -5%;
 }
 
 .cards4{
@@ -222,6 +237,7 @@ body{
     text-align: center;
     height: 180px;
     justify-content: right;
+    background-color: #E13E3E;
     font-size: 20px;
 }
 
@@ -232,12 +248,14 @@ body{
     text-align: left;
     font-weight: lighter;
     margin: 20px;
+    margin-top: 0%;
+    margin-bottom: 6%;
 }
 .cards-setor h5{
     font-weight: lighter;
     text-align: right;
-    margin-right: 15px;
-    margin-top: -20px;
+    margin-right: -3%;
+    margin-top: -5px;
 }
 
 .temperatura{
@@ -246,4 +264,59 @@ body{
   width: 75%;
 }
 
+.help {
+    width: 20%;
+    right: -155px;
+    bottom: 20px;
+    z-index: 100000000000;
+    position: fixed;
+    margin: 0;
+}
 
+
+.help a{
+    border-radius: 10px;
+    font-size: larger;
+    cursor: pointer;
+    color: #212124;
+    text-align: center;
+    text-decoration: none;
+    background-color: #CF7726;
+    padding: 5%;
+    
+}
+
+.normal{
+    animation: mymove 5s infinite;
+}
+@keyframes mymove{
+    50% {box-shadow :inset 0px 0px 60px #2eb62c;}
+}
+
+.frio{
+    animation: frioo 1s infinite;
+}
+@keyframes frioo{
+    50% {box-shadow :inset 0px 0px 60px #3ec8e1}
+}
+
+.quente{
+    animation: quentee 1s infinite;
+}
+@keyframes quentee{
+    50% {box-shadow :inset 0px 0px 60px #E13E3E}
+}
+
+.meioquente{
+    animation: meioquentee 2s infinite;
+}
+@keyframes meioquentee{
+    50% {box-shadow :inset 0px 0px 60px #e18e46}
+}
+
+.meiofrio{
+    animation: meiofrioo 2s infinite;
+}
+@keyframes meiofrioo{
+    50% {box-shadow :inset 0px 0px 60px #d9e146}
+}
