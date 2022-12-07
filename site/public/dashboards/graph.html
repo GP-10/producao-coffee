@@ -71,7 +71,7 @@
       </div>
       
       <div class="porcentagem">
-        <h1>18°C</h1>
+        <h1><span id="temp">18°C</span></h1>
       </div>
 
     </div>  
@@ -83,7 +83,7 @@
       </div>
       
       <div class="porcentagem">
-        <h1>70%</h1>
+        <h1><span id="umi">70%</span></h1>
       </div>
 
     </div>  
@@ -382,7 +382,8 @@ for (i = 0; i < resposta.length; i++) {
               console.log(dados);
               console.log(dados2);
 
-              // let avisoCaptura = document.getElementById(`avisoCaptura${idDados}`)
+             document.getElementById(`umi`).innerHTML = `${novoRegistro.temperatura}%`
+             document.getElementById(`temp`).innerHTML = `${novoRegistro.umidade}ºC`
 
 
               if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
