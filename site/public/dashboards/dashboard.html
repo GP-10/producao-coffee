@@ -202,26 +202,30 @@
     var shadow = document.getElementById('KPI')
 
   for (var i = 0; i < card.length; i++){
-    if(registro.umidade < 3 || registro.temperatura < 5){
+    if(registro.temperatura < 3){
       card[i].style.background = '#3ec8e1';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    }else if(registro.umidade >= 3 && registro.umidade < 18 ||registro.temperatura >= 5 && registro.temperatura < 10){
+    }else if(registro.temperatura < 18){
       card[i].style.background = '#d9e146';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    }else if(registro.umidade > 22 && registro.umidade < 30 || registro.temperatura > 13 && registro.temperatura < 18){
+    }else if(registro.temperatura > 22){
       card[i].style.background = '#e18e46';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
-    } else if(registro.umidade > 30 || registro.temperatura > 18){
+    } else if(registro.temperatura > 30){
       card[i].style.background = '#E13E3E';
       card[i].style.color = 'black';
       p[i].style.color = 'black';
+    }else{
+      card[i].style.background = 'black';
+      card[i].style.color = 'white';
+      p[i].style.color = 'white'
     }
   }
 
-  if(registro.umidade < 3 || registro.temperatura < 5){
+  if(registro.temperatura < 3){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
       document.getElementById('KPI').classList.add('frio')
@@ -229,7 +233,7 @@
       document.getElementById('KPI').classList.remove('quente')
       document.getElementById('KPI').classList.remove('meioquente')
       document.getElementById('KPI').classList.remove('mormal')
-    }else if(registro.umidade >= 3 && registro.umidade < 18 ||registro.temperatura >= 5 && registro.temperatura < 10){
+    }else if(registro.temperatura < 18){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
       document.getElementById('KPI').classList.remove('frio')
@@ -237,7 +241,7 @@
       document.getElementById('KPI').classList.remove('quente')
       document.getElementById('KPI').classList.remove('meioquente')
       document.getElementById('KPI').classList.remove('normal')
-    }else if(registro.umidade > 22 && registro.umidade < 30 || registro.temperatura > 13 && registro.temperatura < 18){
+    }else if(registro.temperatura > 22){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
       document.getElementById('KPI').classList.remove('frio')
@@ -245,7 +249,7 @@
       document.getElementById('KPI').classList.remove('quente')
       document.getElementById('KPI').classList.add('meioquente')
       document.getElementById('KPI').classList.remove('normal')
-    } else if(registro.umidade >= 30 || registro.temperatura >= 18){
+    } else if(registro.temperatura > 30){
       console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
       alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
       document.getElementById('KPI').classList.remove('frio')
